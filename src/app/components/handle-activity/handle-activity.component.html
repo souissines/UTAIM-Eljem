@@ -1,0 +1,17 @@
+<div class="row">
+    <div class="col-md-4">
+<form [formGroup]="form" (ngSubmit)="addActivity()" method="POST">
+    <div class="form-group">
+      <label >عنوان النشاط</label>
+      <input type="text" class="form-control" aria-describedby="emailHelp" placeholder="ادخل العنوان" formControlName="title">
+    </div>
+    
+    <div class="form-group">
+      
+      <label >حمل الصورة</label>
+      <input type="file" class="form-control" formControlName="photo_activity" (change)="fileChange($event)" >
+    </div>
+    <button type="submit" class="btn btn-primary">ارسل</button>
+  </form>
+</div>
+</div>

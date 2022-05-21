@@ -1,0 +1,36 @@
+<section class="ftco-section">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-6 text-center mb-5">
+                
+            </div>
+        </div>
+        <div class="row" *ngFor="let box of boxes">
+            <div class="col-md-12">
+                <div class="table-wrap">
+                    <table class="table table-bordered table-dark table-hover">
+                      <thead>
+                        <tr>
+                          <th>#</th>
+                          <th {{box?.name}} >الاسم</th>
+                          <th  {{box?.email}}>البريد الاكتروني</th>
+                          <th {{box?.phone}}>رقم الهاتف</th>
+                          <th {{box?.message}}>الرسالة </th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <th scope="row">1</th>
+                          <td>ايناس</td>
+                          <td>souissi@gmail.com</td>
+                          <td>2929930</td>
+                          <td>Heelo</td>
+                        </tr>
+                      
+                      </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

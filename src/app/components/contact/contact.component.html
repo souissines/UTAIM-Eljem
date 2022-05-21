@@ -1,4 +1,4 @@
-<section id="contact">
+<section id="contact" >
     <div class="container-fluid wrapper">
         <div class="row">
             <div class="col-lg-6 text-center">
@@ -8,9 +8,9 @@
             <div class="col-md-6">
                 <div class="company-address col-sm-6 col-md-6">
                     <address>
-
+ 
                                         <span id="map-input">
-
+                                           
                                             المقر : المركز النموذجي لرعاية المعاقين بالجم<br>
                                     </span>
                                         <br>
@@ -23,47 +23,74 @@
                                         <br>
                                         <a href="num#">رقم الهاتف / الفاكس: 73632305  </a>
                                     </address>
+                                    
+                                    
                 </div>
+                
             </div>
+            
         </div>
-        <div class="row">
+        
+        <div class="row" >
             <div class="col-lg-12">
-                <form name="sentMessage" id="" novalidate>
+                <form [formGroup]="boxForm" name="sentMessage" id="" novalidate>
                     <div class="row">
                         <div class="col-md-6 contact-form-box">
-                            <div class="form-group">
-                                <input type="text" class="form-control" placeholder="الاسم *" id="name" required data-validation-required-message="Please enter your name.">
-                                <p class="help-block text-danger"></p>
+                            <div *ngIf="boxForm.controls['fname'].invalid && (boxForm.controls['fname'].touched|| boxForm.controls['fname'].dirty)">
+                                <div *ngIf="boxForm.controls['fname'].errors?.['minlength']" style="color:red;"> يجب ان يحتوي الاسم على الاقل على حرفين  </div>
                             </div>
                             <div class="form-group">
-                                <input type="email" class="form-control" placeholder="البريد الإلكتروني *" id="email" required data-validation-required-message="Please enter your email address.">
+                                <input type="text" class="form-control" placeholder="الاسم *"  formControlName="fname" id="name" required data-validation-required-message="Please enter your name.">
                                 <p class="help-block text-danger"></p>
+                            </div>
+                            <div *ngIf="boxForm.controls['email'].invalid && (boxForm.controls['email'].touched|| boxForm.controls['email'].dirty)">
+                                <div *ngIf="boxForm.controls['email'].errors?.['required']" style="color:red;"> البريد الاكتروني مطلوب  </div>
+                               
                             </div>
                             <div class="form-group">
-                                <input type="tel" class="form-control" placeholder="رقم الهاتف  *" id="phone" required data-validation-required-message="Please enter your phone number.">
+                                <input type="email" class="form-control" formControlName="email" placeholder="البريد الإلكتروني *" id="email" required data-validation-required-message="Please enter your email address.">
                                 <p class="help-block text-danger"></p>
+                            </div>
+                            <div *ngIf="boxForm.controls['phone'].invalid && (boxForm.controls['phone'].touched|| boxForm.controls['phone'].dirty)">
+                                <div *ngIf="boxForm.controls['phone'].errors?.['required']" style="color:red;"> رقم الهاتف مطلوب </div>
+                                
                             </div>
                             <div class="form-group">
-                                <textarea class="form-control" placeholder="رسالتك *" id="message" required data-validation-required-message="Please enter a message."></textarea>
+                                <input type="tel" class="form-control" formControlName="phone" placeholder="رقم الهاتف  *" id="phone" required data-validation-required-message="Please enter your phone number.">
                                 <p class="help-block text-danger"></p>
                             </div>
+                            <div *ngIf="boxForm.controls['msg'].invalid && (boxForm.controls['msg'].touched|| boxForm.controls['msg'].dirty)">
+                                <div *ngIf="boxForm.controls['msg'].errors?.['required']" style="color:red;"> رسالتك مطلوبة </div>
+                                
+                            </div>
+                            <div class="form-group">
+                                <textarea class="form-control" placeholder="رسالتك *" id="message"  formControlName="msg" required data-validation-required-message="Please enter a message."></textarea>
+                                <p class="help-block text-danger"></p>
+                            </div>
+                            
 
 
                             <div id="success"></div>
-                            <button type="submit" class="btn btn-xl">أرسل</button>
+                            <button type="submit" class="btn btn-xl" >أرسل</button>
 
                         </div>
-                        
-                        <div class="col-md-6">
-                            <img src="assets/img/localisation/eljem1.PNG" >
+                        <div class="col-12">
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3256.635129504523!2d10.692652714592993!3d35.2901969589265!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1301fd02d776ee91%3A0x9171b07e46c01385!2sUTAIM%20ElJem!5e0!3m2!1sen!2stn!4v1652087573150!5m2!1sen!2stn"
+                                            width="550" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+                                        </iframe>
                         </div>
+                       
 
                         <div class="clearfix"></div>
-
+                        
                     </div>
                 </form>
+               
             </div>
         </div>
+       
+       
     </div>
+    
        
 </section>

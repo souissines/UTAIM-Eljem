@@ -1,0 +1,92 @@
+<section id="portfolio">
+    <div class="container-fluid wrapper">
+        <div class="row">
+            <div class="col-md-12">
+                <h2 class="section-heading">الانشطة</h2>
+                <h3 class="section-subheading text-muted"> تراعي الأنشطة المستوى الذهني العام لكل مجموعة و تهتم بتطوير المهارات الحركية و اللغوية و المعرفية و النفسية و الإجتماعية للمستفيدين.
+                </h3>
+            </div>
+
+        </div>
+    </div>
+    <div class="portfolio-wrapper portfolio-container-fluid">
+        <div class="portfolio-items">
+            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-3 work-grid php graphic">
+                <div class="portfolio-item">
+                    <div class="hover-bg">
+                        <a routerLink="activity" href="#portfolioModal1" class="portfolio-link" data-toggle="modal">
+                            <div class="hover-text">
+                                <h4> التعرف على حاسة اللمس</h4>
+                                <div class="clearfix"></div>
+                                <i class="fa fa-plus"></i>
+                            </div>
+                            <img src="assets/img/portfolio/card.jpg" class="img-responsive" alt="portfolio-image">
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-3 work-grid php graphic">
+                <div class="portfolio-item">
+                    <div class="hover-bg">
+                        <a href="#portfolioModal2" class="portfolio-link" data-toggle="modal">
+                            <div class="hover-text">
+                                <h4>التعرف على الالات الموسيقية</h4>
+
+                                <div class="clearfix"></div>
+                                <i class="fa fa-plus"></i>
+                            </div>
+                            <img src="assets/img/portfolio/2.jpg" class="img-responsive" alt="portfolio-image">
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-3 work-grid wordpress bootstrap">
+                <div class="portfolio-item">
+                    <div class="hover-bg">
+                        <a href="#portfolioModal1" class="portfolio-link" data-toggle="modal">
+                            <div class="hover-text">
+                                <h4> التعرف على حرف الغاء</h4>
+
+                                <div class="clearfix"></div>
+                                <i class="fa fa-plus"></i>
+                            </div>
+                            <img src="assets/img/portfolio/3.jpg" class="img-responsive" alt="portfolio-image">
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div *ngFor="let activity of activities" class="col-xs-12 col-sm-6 col-md-6 col-lg-3 work-grid wordpress html bootstrap graphic">
+                <div class="portfolio-item">
+                    <div class="hover-bg">
+                        <a href="#portfolioModal2" class="portfolio-link" data-toggle="modal">
+                            <div class="hover-text">
+                                <h4> {{activity?.title}}</h4>
+
+                                <div class="clearfix"></div>
+                                <i class="fa fa-plus"></i>
+                            </div>
+                            <img src="{{activity?.activity_photo}}" class="img-responsive" alt="activity-image">
+                        </a>
+                    </div>
+                </div>
+            </div>
+           
+            
+            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-3 work-grid wordpress graphic">
+                <div class="portfolio-item">
+                    <div class="hover-bg">
+                        <a href="#portfolioModal2" class="portfolio-link" data-toggle="modal">
+                            <div class="hover-text">
+                                <h4>التعرف على حرف الكاف</h4>
+
+                                <div class="clearfix"></div>
+                                <i class="fa fa-plus"></i>
+                            </div>
+                            <img src="assets/img/portfolio/book.jpg" class="img-responsive" alt="portfolio-image">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

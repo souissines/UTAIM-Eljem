@@ -22,6 +22,12 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ProfileComponent } from './components/profile/profile.component';
 import { ActivitiesComponent } from './components/activities/activities.component';
+import { FormComponent } from './components/form/form.component';
+import { ActivityService } from './services/activity.service';
+import { HandleActivityComponent } from './components/handle-activity/handle-activity.component';
+import { ProfileService } from './services/profile.service';
+import { BoxComponent } from './components/box/box.component';
+import { BoxService } from './services/box.service';
 
 
 @NgModule({
@@ -42,7 +48,10 @@ import { ActivitiesComponent } from './components/activities/activities.componen
     ScrollupComponent,
     AboutUsComponent,
     ProfileComponent,
-    ActivitiesComponent
+    ActivitiesComponent,
+    FormComponent,
+    HandleActivityComponent,
+    BoxComponent
   ],
   imports: [
     BrowserModule,
@@ -55,7 +64,7 @@ import { ActivitiesComponent } from './components/activities/activities.componen
 
     
   ],
-  providers: [],
+  providers: [ActivityService,ProfileService,BoxService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -14,6 +14,7 @@ import { Router } from '@angular/router';
 export class LoginComponent implements OnInit {
 msg: any;
 myform!: FormGroup;
+errorMessage: string = "";
   constructor(private pService: PublicService, private authenticationService: AuthenticationService,private router: Router) { }
 
   ngOnInit(): void {
@@ -42,6 +43,9 @@ showMessage(){
       data => {
         console.log(data);
         this.router.navigate(['/activity']);
+      },
+      (error) => {
+        this.errorMessage = "اسم المستخدم أو كلمة المرور غير صحيحة";
       }
     )
   }
